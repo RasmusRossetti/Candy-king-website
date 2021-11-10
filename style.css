@@ -1,0 +1,263 @@
+* {
+  font-family: "Anton", sans-serif;
+}
+li a {
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+li a:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+.container img {
+  max-width: 50px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.container #logo:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+#mainNav,
+.navbar {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
+}
+@media screen and (max-width: 600px) {
+  #mainNav {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+  }
+}
+.navbar {
+  height: 300px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  color: white;
+  max-width: 100%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 0% 100%);
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.onHoover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+
+.candyClick:hover {
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.candyClick {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: solid 0px;
+  padding: 10px;
+
+  transition: 0, 3s;
+}
+#click-card {
+  width: 0;
+}
+
+.candycolour {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.button-text h1 {
+  font-size: 50px;
+}
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 60px;
+  width: 300px;
+}
+@media screen and (max-width: 600px) {
+  .nav-item a {
+    position: relative;
+    display: inline;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav-item a {
+    position: relative;
+    display: inline;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-content {
+    flex-wrap: wrap;
+  }
+  .header-text h1 {
+    font-size: 50px;
+  }
+  .header-text {
+    margin: 30px;
+  }
+  .button-text h1 {
+    font-size: 50px;
+  }
+  .button-text {
+    margin: 30px;
+    border: solid 0, 5px black;
+    padding-bottom: 60px;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+.footer p {
+  margin: 10px;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+.footer a:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+
+body {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.699),
+      rgba(255, 255, 255, 0.651)
+    ),
+    url(/img/candyy.jpg);
+}
+.container1 {
+  margin-top: 60px;
+}
+
+#arrow {
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 30px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  right: 11%;
+  bottom: 34%;
+  box-shadow: 0 10px 0px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+#arrow2 {
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 30px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  right: 9%;
+  bottom: 34%;
+  box-shadow: 0 10px 0px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+#arrow:hover {
+  box-shadow: 0 20px 0px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+#arrow2:hover {
+  box-shadow: 0 20px 0px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+@media screen and (max-width: 600px) {
+  #arrow {
+    display: none;
+  }
+  #arrow2 {
+    display: none;
+  }
+}
