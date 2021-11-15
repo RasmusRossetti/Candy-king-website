@@ -269,13 +269,13 @@ body {
   position: relative;
   top: 300px;
 }
-.container3 {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 300px;
+.container3,
+#output {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
 }
-.container3 .card {
+.container3 .card,
+#output {
   margin-bottom: 100px;
 }
 .card {
@@ -286,7 +286,8 @@ body {
   border-radius: 10px;
 }
 /* On mouse-over, add a deeper shadow */
-.card:hover {
+.card:hover,
+.output {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .card-body {
@@ -298,11 +299,17 @@ body {
   background-color: rgb(46, 42, 42);
   color: rgb(250, 250, 250);
   border: rgb(177, 108, 108);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 @media screen and (max-width: 600px) {
   .container2,
-  .container3 {
+  .container3,
+  #output {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 600px) {
