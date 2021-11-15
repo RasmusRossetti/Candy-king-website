@@ -46,3 +46,11 @@ let foundItem6 = product.find((item) => {
     return item.name === 'Lollipop'; 
 });
 document.getElementById('product6').innerHTML = foundItem6.name +'<br>'+ foundItem6.price + '$';
+
+function printObject(){
+    let foundItem1 = product.find((item) => {
+        return item.name === 'Bubble Gum';   
+    });
+    document.getElementById('product1').innerHTML = foundItem1.name +'<br>'+ foundItem1.price + '$';
+    
+    }
