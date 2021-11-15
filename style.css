@@ -47,6 +47,7 @@ li a:hover {
 #mainNav,
 .navbar {
   clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
+  top: 0;
 }
 @media screen and (max-width: 600px) {
   #mainNav {
@@ -186,6 +187,7 @@ li a:hover {
 }
 .footer p {
   margin: 10px;
+  padding: 10px;
 }
 .footer a {
   text-decoration: none;
@@ -213,7 +215,7 @@ body {
       rgba(255, 255, 255, 0.699),
       rgba(255, 255, 255, 0.651)
     ),
-    url(/Candy-king-website/img/candyy.jpg);
+    url(/img/candyy.jpg);
 }
 .container1 {
   margin-top: 60px;
@@ -260,4 +262,89 @@ body {
   #arrow2 {
     display: none;
   }
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 300px;
+}
+.container3 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 300px;
+}
+.container3 .card {
+  margin-bottom: 100px;
+}
+.card {
+  margin: 30px;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card-body {
+  background: rgb(236, 233, 233);
+  color: rgb(66, 62, 62);
+  border-radius: 0px 0px 10px 10px;
+}
+.btn {
+  background-color: rgb(46, 42, 42);
+  color: rgb(250, 250, 250);
+  border: rgb(177, 108, 108);
+}
+@media screen and (max-width: 600px) {
+  .container2,
+  .container3 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 10px;
+  }
+}
+
+.main-content {
+  position: relative;
+  top: 300px;
+}
+@media screen and (max-width: 600px) {
+  .main-content {
+    position: relative;
+    top: 200px;
+  }
+}
+.btn:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+  transform: scale(1.2);
+}
+.fa {
+  position: relative;
+  top: 32px;
+  font-size: 30px;
+}
+.fa:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
+  transform: scale(1.2);
 }
