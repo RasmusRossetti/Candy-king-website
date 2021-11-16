@@ -278,6 +278,10 @@ body {
   justify-content: center;
   position: relative;
   top: 100px;
+  top: 100px;
+  left: 50%;
+  -ms-transform: translate(-50px, -50%);
+  transform: translate(-50%, -50px);
 }
 .container3,
 #output {
@@ -335,7 +339,7 @@ body {
 @media screen and (max-width: 600px) {
   .main-content {
     position: relative;
-    top: 200px;
+    top: 50px;
   }
 }
 .btn:hover {
@@ -381,6 +385,22 @@ body {
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
   height: 50px;
+}
+@media screen and (max-width: 600px) {
+  #myBtn {
+    right: 15px;
+    width: 35px;
+    font-size: 20px;
+    padding-left: 9px;
+  }
+  .candyClick {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 }
 
 #myBtn:hover {

@@ -22,7 +22,7 @@ product.forEach(element => {document.getElementById('output').innerHTML +=( `<di
 <div class="card-body">
   <h5 id="product1">${element.name}<br>${element.price}$ </h5>
   <p class="card-text">${element.info}</p>
-  <a onclick="printObject();" href="#" class="btn btn-primary">Buy now</a>
+  <a onclick="printObject();" href="#" class="btn btn-primary">Add to cart</a>
 </div>
 </div>`)
 });
