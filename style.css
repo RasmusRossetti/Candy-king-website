@@ -1,5 +1,6 @@
 * {
   font-family: "Anton", sans-serif;
+  scroll-behavior: smooth;
 }
 li a {
   font-family: "Bebas Neue", cursive;
@@ -187,7 +188,7 @@ section {
 .footer {
   display: flex;
   justify-content: space-around;
-  position: fixed;
+
   left: 0;
   bottom: 0;
   width: 100%;
@@ -292,15 +293,18 @@ body {
 #output {
   margin-bottom: 100px;
 }
-.card {
+.card1 {
   margin: 30px;
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 10px;
 }
+.card1 img {
+  background-color: white;
+}
 /* On mouse-over, add a deeper shadow */
-.card:hover,
+.card1:hover,
 .output {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -309,6 +313,7 @@ body {
   color: rgb(66, 62, 62);
   border-radius: 0px 0px 10px 10px;
 }
+
 .btn {
   background-color: rgb(46, 42, 42);
   color: rgb(250, 250, 250);
@@ -316,6 +321,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-radius: 20px;
 }
 @media screen and (max-width: 600px) {
   .container2,
@@ -327,7 +333,7 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
-  .card {
+  .card1 {
     margin: 10px;
   }
 }
@@ -405,4 +411,326 @@ body {
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/* CART CSS */
+.card .title {
+  margin-bottom: 5vh;
+}
+
+.card {
+  margin: auto;
+  max-width: 950px;
+  width: 90%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin: 3vh auto;
+  }
+}
+
+.cart {
+  background-color: #fff;
+  padding: 4vh 5vh;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+  .cart {
+    padding: 4vh;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 1rem;
+  }
+}
+
+.summary {
+  background-color: #ddd;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 4vh;
+  color: rgb(65, 65, 65);
+}
+
+@media (max-width: 767px) {
+  .summary {
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+  }
+}
+
+.summary .col-2 {
+  padding: 0;
+}
+
+.summary .col-10 {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.title b {
+  font-size: 1.5rem;
+}
+
+.main {
+  margin: 0;
+  padding: 2vh 0;
+  width: 100%;
+}
+
+.col-2,
+.col {
+  padding: 0 1vh;
+}
+
+a {
+  padding: 0 1vh;
+}
+
+.close {
+  margin-left: auto;
+  font-size: 0.7rem;
+}
+
+img {
+  width: 3.5rem;
+}
+
+.back-to-shop {
+  margin-top: 4.5rem;
+}
+
+h5 {
+  margin-top: 4vh;
+}
+
+hr {
+  margin-top: 1.25rem;
+}
+
+form {
+  padding: 2vh 0;
+}
+
+select {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1.5vh 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.btn {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 0;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  -webkit-user-select: none;
+  transition: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#code {
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.185)
+    ),
+    url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
+}
+/* ----------------Kontakta oss---------------- */
+@media screen and (max-width: 600px) {
+  .contact-box {
+    position: absolute;
+    top: 1px;
+  }
+  .right {
+    margin: 20px;
+  }
+  .container4 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.container4 {
+  transform: translate(-50%, -50%);
+  right: 50%;
+  left: 50%;
+  top: 40%;
+  width: 80%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact-box {
+  position: absolute;
+  bottom: -400px;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.right,
+.left {
+  padding: 25px 40px;
+}
+
+.right {
+  border: 1px solid black;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: white;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid rgb(179, 179, 179);
+  background-color: white;
+  border-radius: 1px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  min-height: 100px;
+  max-width: 370px;
+}
+
+label {
+  color: rgb(59, 59, 59);
+  font-weight: 800;
+}
+
+@media screen and (max-width: 880px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-box .column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.grundare {
+  letter-spacing: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.contact-box p {
+  text-align: center;
+}
+
+.contact-box h5 {
+  font-size: 32px;
+  margin: 0;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact-box .button {
+  padding: 7px;
+  color: white;
+  border: #23a6d5 solid 1px;
+  border-radius: 3px;
+  background-color: #23a6d5;
+  font-size: 15px;
+}
+.cart-toggle {
+  display: none;
+}
+#cart-number {
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  padding-top: 34px;
+  width: 35px;
+}
+.footer1 {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.footer1 a {
+  text-decoration: none;
+  color: black;
+}
+.footer1 a:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+  transition: 0.3s;
 }
