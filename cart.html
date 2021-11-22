@@ -38,15 +38,17 @@
         <div class=" collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a  class="text-light nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="text-light nav-link px-lg-3 py-3 py-lg-4" href="mywork.html">About</a></li>
+                <li class="nav-item"><a class="text-light nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                 
                 <li class="nav-item"><a class="text-light nav-link px-lg-3 py-3 py-lg-4" href="products.html">Products</a></li>
                 <li class="nav-item"><a class="text-light nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:24px; color: white;"></i></a> 
+                <input id="cart-number" data-value type="text" value="0" />
             </ul>
         </div>
     </div>
 </nav>
+<div class="product-container">
 <div class="card ">
     <div class="row">
         <div class="col-md-8 cart">
@@ -55,32 +57,10 @@
                     <div class="col">
                         <h4><b>Shopping Cart</b></h4>
                     </div>
-                    <div class="col align-self-center text-right text-muted">3 items</div>
+                    <div id="totalItems" class="col align-self-center text-right text-muted"></div>
                 </div>
             </div>
             
-            <div class="row border-top border-bottom">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="img/candy (1).png"></div>
-                    <div class="col">
-                        <div class="row text-muted">Candy</div>
-                        <div class="row">Sour fish</div>
-                    </div>
-                    <div class="col"> <button >-</button><a href="#" class="border">1</a><button >+</button> </div>
-                    <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="img/candy (2).png"></div>
-                    <div class="col">
-                        <div class="row text-muted">Candy</div>
-                        <div class="row">Licorice</div>
-                    </div>
-                    <div class="col"> <button >-</button><a href="#" class="border">1</a><button >+</button> </div>
-                    <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
             <div id="product-cart">  
                 
             </div>
@@ -93,8 +73,8 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS 3</div>
-                <div class="col text-right">&euro; 132.00</div>
+                <div id="totalItems2" class="col" style="padding-left:0;">ITEMS 3</div>
+                <div id="totalPrice" class="col text-right">&euro; </div>
             </div>
             <form>
                 <p>SHIPPING</p> <select>
@@ -104,10 +84,11 @@
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">&euro; 137.00</div>
-            </div> <button onclick="addProduct();" class="btn">CHECKOUT</button>
+                <div id="TOTALPRICE"  class="col text-right">&euro; </div>
+            </div> <button class="btn">CHECKOUT</button>
         </div>
     </div>
+</div>
 </div>
 
 
@@ -117,6 +98,7 @@
     <p><a href="#">job openings</a></p>
   </div>
   <script src="script.js"></script>
+  <script src="cart.js"></script>
 </body>
 
 
