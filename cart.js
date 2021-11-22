@@ -19,6 +19,12 @@ carts[i].addEventListener('click', ()=> {
 //skapar function för nollan bredvid shop iconen för att inte försvinna vid uppdatering av sida
 function onLoadCartNumbers(){
     let productNumbers = localStorage.getItem('cartNumbers');
+    let totalItems = document.getElementById('totalItems');
+    let totalItems2 =document.getElementById('totalItems2');
+    if(productNumbers){
+        totalItems.innerHTML = productNumbers+' '+'items';
+        totalItems2.innerHTML = productNumbers +' '+'items';
+    }
     if(productNumbers){
         document.getElementById('cart-number').value = productNumbers;
     }
@@ -41,9 +47,10 @@ if( productNumbers){
 }
   setItems(products);
 }
-//function för att sätta objekt namnen i localstorage och hu rmånga incart
+//function för att sätta objekt namnen i localstorage och hur många incart
 function setItems(products){
     let cartItems = localStorage.getItem('productsInCart');
+    //JSON parse får json till javascript
     cartItems = JSON.parse(cartItems);
     
 
@@ -66,7 +73,7 @@ function setItems(products){
         }
     }
     
-    
+    //JSON stringify är från javascript till JSON
     localStorage.setItem('productsInCart',JSON.stringify (cartItems));
 }
 //skapar function för totalkostnad
@@ -93,12 +100,11 @@ function displayCart(){
 
     let totalPrice = document.getElementById('totalPrice');
 
-    let totalItems = document.getElementById('totalItems');
-
-    let totalItems2 =document.getElementById('totalItems2');
+    
     let totalPriceCheckout = document.getElementById('TOTALPRICE');
 
     let cartCost = localStorage.getItem('totalCost');
+    
 
     if(cartItems && productContainer && totalPrice){
         productContainer.innerHTML = '';
@@ -118,8 +124,6 @@ function displayCart(){
           </div> <br>`
           totalPrice.innerHTML = '$' + cartCost+'.00';
           
-          totalItems.innerHTML = item.incart +item.incart+ ' '+'items';
-          totalItems2.innerHTML = item.incart + item.incart+' '+'items';
           totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
         })
     }
