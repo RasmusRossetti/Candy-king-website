@@ -734,3 +734,9 @@ label {
   animation: textShine 7s ease-in-out infinite alternate;
   transition: 0.3s;
 }
+.border1 {
+  width: 10px;
+  text-align: center;
+  padding: 0;
+  margin: 10px;
+}

@@ -96,10 +96,11 @@ function displayCart(){
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
-    let productContainer = document.getElementById('product-cart');
+    let productContainer = document.querySelector('.product-cart');
 
     let totalPrice = document.getElementById('totalPrice');
 
+    
     
     let totalPriceCheckout = document.getElementById('TOTALPRICE');
 
@@ -116,17 +117,56 @@ function displayCart(){
                 <div class="col-2"><img class="img-fluid" src=${item.image}></div>
                 <div class="col">
                     <div class="row text-muted">Candy</div>
-                    <div class="row">${item.name}</div>
+                    <div class="row-name">${item.name}</div>
                 </div>
-                <div class="col"> <button >-</button><a href="#" class="border">${item.incart}</a><button >+</button> </div>
-                <div class="col">&euro;${item.price} <button>x</button></div>
+                <div class="col"> <button class="decrease">-</button><span class="border1">${item.incart} </span><button class="increase">+</button> </div>
+                <div class="col">&euro;${item.price} <button class="delete">x</button></div>
             </div>
           </div> <br>`
           totalPrice.innerHTML = '$' + cartCost+'.00';
-          
           totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
-        })
+        });
+        
+    }
+    //invokar delete functionen där vi displayar våran displaycart function
+    deleteButtons();
+}
+
+//skapar function för att ta bort object
+function deleteButtons(){
+    let deleteButtons = document.querySelectorAll('.delete');
+    let productName;
+    let productNumbers = localStorage.getItem('cartNumbers');
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    let cartCost = localStorage.getItem('totalCost');
+
+   
+    
+
+    //loopar genom alla delete buttons som skapas och skapar en click listener på alla
+    for(let i = 0; i<deleteButtons.length; i++){
+        deleteButtons[i].addEventListener('click', ()=>{
+            //för varje delete klick så svaras det vilken produkt som klickas delete på
+           productName = deleteButtons[i].parentElement.parentElement.textContent.trim().toLowerCase().replace(/ /g, '');
+           console.log(productName);
+           
+           
+
+           localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].incart);
+            localStorage.setItem('totalCost', cartCost - ( cartItems[productName].price * cartItems[productName].incart));
+
+            delete cartItems[productName];
+            localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+
+            displayCart();
+            onLoadCartNumbers(); 
+        });
     }
 }
+
+
+
+
 onLoadCartNumbers();
 displayCart();
