@@ -30,6 +30,15 @@ let product = [
 </div>`)
 });
 
+function addProductEffect(){
+  let element = document.querySelector('.btn');
+  for(let i = 0; i < element.length; i++){
+    console.log('runn')
+    element.innerHTML = 'Added to cart';
+  }
+}
+
+
 //Get the button:
 mybutton = document.getElementById("myBtn");
 
@@ -63,7 +72,7 @@ function addProduct(){
           <div class="row">Cotton T-shirt</div>
       </div>
       <div class="col"> <button >-</button><a href="#" class="border">1</a><button >+</button> </div>
-      <div class="col">&euro; 44.00 <button>x</button></div>
+      <div  class="col">&euro; 44.00 <button>x</button></div>
   </div>
 </div> <br>`
 
@@ -74,4 +83,5 @@ function addProduct(){
     increment();
     addProduct();
   }
-  
+
+

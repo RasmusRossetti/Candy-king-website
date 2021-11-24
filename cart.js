@@ -13,9 +13,13 @@ for(let i = 0; i < carts.length; i++){
 carts[i].addEventListener('click', ()=> {
     //lägger till arrayen i parametern för att skriva den produkten man klickar på
     cartNumbers(products[i]);
-    totalCost(products[i])
+    totalCost(products[i]);
+   
 })
 }
+
+   
+  
 //skapar function för nollan bredvid shop iconen för att inte försvinna vid uppdatering av sida
 function onLoadCartNumbers(){
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -26,7 +30,7 @@ function onLoadCartNumbers(){
         totalItems2.innerHTML = productNumbers +' '+'items';
     }
     if(productNumbers){
-        document.getElementById('cart-number').value = productNumbers;
+        document.getElementById('cart-number').textContent = productNumbers;
     }
 }
 //använder local storage skapar function för click och adderar antalet produkt som klickas, lägger till arrayen i parametern för att skriva den produkten man klickar på
@@ -39,11 +43,11 @@ productNumbers = parseInt(productNumbers);
 //gör en if sats om en produkt finns redan i localstorage om de finns så adderar vi med 1
 if( productNumbers){
     localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.getElementById('cart-number').value = productNumbers +1;
+    document.getElementById('cart-number').textContent = productNumbers +1;
 }else{
     localStorage.setItem('cartNumbers',1);
     //hämtar nollan bredvid cart iconen som ska incrementa
-    document.getElementById('cart-number').value = 1;
+    document.getElementById('cart-number').textContent = 1;
 }
   setItems(products);
 }

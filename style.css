@@ -740,3 +740,47 @@ label {
   padding: 0;
   margin: 10px;
 }
+.footer-contact {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8px;
+}
+.footer-contact a {
+  text-decoration: none;
+}
+@media screen and (max-width: 700px) {
+  #cart-icon {
+    position: absolute;
+    top: 130px;
+    left: 14px;
+  }
+  .fa {
+    position: absolute;
+    top: 220px;
+    left: 23px;
+  }
+  #cart-number {
+    position: absolute;
+    top: 250px;
+    left: 28px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  background-color: #2b3044;
+  outline: none;
+  cursor: pointer;
+
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  user-select: none;
+}
