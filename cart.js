@@ -14,8 +14,17 @@ carts[i].addEventListener('click', ()=> {
     //lägger till arrayen i parametern för att skriva den produkten man klickar på
     cartNumbers(products[i]);
     totalCost(products[i]);
-   
+    addedToCart();
 })
+}
+//skapar funtion för ADDED TO CART effekt
+function addedToCart(){
+ let addedToCart = document.querySelector('.btn')
+ addedToCart.innerHTML = 'Added to cart';
+ addedToCart.classList.add('added-To-Cart');
+carts[i].innerHTML = 'Added to cart';
+ 
+//  addEventListener("mouseout", addedToCart.innerHTML = 'Add to cart');
 }
 
    

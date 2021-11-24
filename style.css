@@ -772,8 +772,12 @@ label {
     padding: 0;
   }
 }
-
+.btn:focus {
+  outline: 0;
+  outline-width: 0px;
+}
 .btn {
+  outline: 0;
   border-radius: 5px;
   background-color: #2b3044;
   outline: none;
@@ -783,4 +787,17 @@ label {
   transition: 0.3s ease-in-out;
   overflow: hidden;
   user-select: none;
+  outline-width: 0px;
+}
+.added-To-Cart {
+  animation-name: added-To-Cart;
+  animation-duration: 2s;
+}
+@keyframes added-To-Cart {
+  from {
+    background-color: rgb(8, 148, 8);
+  }
+  to {
+    background-color: #000;
+  }
 }
