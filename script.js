@@ -14,8 +14,6 @@ let product = [
    { image:"/img/cotton-candy.png" , name:'Cotton Candy', price:35, info: 'One bite of these puffy cumulus clouds of sugar floss, raspberry-flavored blue cotton candy, will have your taste buds floating on cloud nine! Hosting a baby shower or other event with a blue color theme? '},
    { image:"/img/gummy-bear.png" , name:'Gummy Bears', price:40, info: 'High-brow bears with sophisticated fruity flavors, these delicious candy creatures are not your everyday gummy bear. You"ll want to save these sweets for your favorite friends and family.'},
    { image:"/img/lollipop.png" , name:'Lollipop', price:5, info: 'Well, we can assure you that your suddenly growling stomach has as much to do with this hypnotic pattern as it does with the fact that these little lollipops look just as delicious as they taste!'}
-   
-   
 ];
 
 //loopar arrayen och skriver ut html kort med arrayens objekt
@@ -64,7 +62,7 @@ function topFunction() {
 
 let productCart = [];
 function addProduct(){
-  document.getElementById('product-cart').innerHTML+=`<div class="row">
+  document.getElementById('product-cart').innerHTML +=`<div class="row">
   <div class="row main align-items-center">
       <div class="col-2"><img class="img-fluid" src="img/candy (2).png"></div>
       <div class="col">

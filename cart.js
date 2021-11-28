@@ -17,15 +17,17 @@ carts[i].addEventListener('click', ()=> {
     addedToCart();
 })
 }
-//skapar funtion för ADDED TO CART effekt
-function addedToCart(){
- let addedToCart = document.querySelector('.btn')
- addedToCart.innerHTML = 'Added to cart';
- addedToCart.classList.add('added-To-Cart');
-carts[i].innerHTML = 'Added to cart';
- 
-//  addEventListener("mouseout", addedToCart.innerHTML = 'Add to cart');
-}
+
+
+// skapar funtion för ADDED TO CART effekt
+// function addedToCart(){
+//     let addedToCart = document.querySelector('.btn')
+//     addedToCart.innerHTML = 'Added to cart';
+//     addedToCart.classList.add('added-To-Cart');
+  
+    
+    // addEventListener("mouseout", addedToCart.innerHTML = 'Add to cart');
+//    }
 
    
   
@@ -35,13 +37,15 @@ function onLoadCartNumbers(){
     let totalItems = document.getElementById('totalItems');
     let totalItems2 =document.getElementById('totalItems2');
     if(productNumbers){
-        totalItems.innerHTML = productNumbers+' '+'items';
-        totalItems2.innerHTML = productNumbers +' '+'items';
-    }
-    if(productNumbers){
         document.getElementById('cart-number').textContent = productNumbers;
     }
+    if(productNumbers){
+        totalItems.innerText = productNumbers+' '+'items';
+        totalItems2.innerHTML = productNumbers +' '+'items';
+    }
+    
 }
+
 //använder local storage skapar function för click och adderar antalet produkt som klickas, lägger till arrayen i parametern för att skriva den produkten man klickar på
 function cartNumbers(products){
     //hämtar från local storage med metoden getItem
@@ -106,6 +110,7 @@ if(cartCost != null){
 }
 
 function displayCart(){
+    console.log('displayCart')
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
@@ -113,14 +118,12 @@ function displayCart(){
 
     let totalPrice = document.getElementById('totalPrice');
 
-    
-    
     let totalPriceCheckout = document.getElementById('TOTALPRICE');
 
     let cartCost = localStorage.getItem('totalCost');
     
 
-    if(cartItems && productContainer && totalPrice){
+    if(cartItems && productContainer){
         productContainer.innerHTML = '';
         
 
@@ -136,10 +139,9 @@ function displayCart(){
                 <div class="col">&euro;${item.price} <button class="delete">x</button></div>
             </div>
           </div> <br>`
-          totalPrice.innerHTML = '$' + cartCost+'.00';
-          totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
         });
-        
+        totalPrice.innerHTML = '$' + cartCost+'.00';
+          totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
     }
     //invokar delete functionen där vi displayar våran displaycart function
     deleteButtons();
@@ -153,7 +155,7 @@ function deleteButtons(){
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
     let cartCost = localStorage.getItem('totalCost');
-
+    console.log(deleteButtons)
    
     
 
@@ -161,22 +163,25 @@ function deleteButtons(){
     for(let i = 0; i<deleteButtons.length; i++){
         deleteButtons[i].addEventListener('click', ()=>{
             //för varje delete klick så svaras det vilken produkt som klickas delete på
-           productName = deleteButtons[i].parentElement.parentElement.textContent.trim().toLowerCase().replace(/ /g, '');
+           productName = deleteButtons[i].parentElement.parentElement.childNodes[3].childNodes[3].textContent;
            console.log(productName);
+           console.log(cartItems['Bubble Gum'])
            
-           
-
+            
            localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].incart);
             localStorage.setItem('totalCost', cartCost - ( cartItems[productName].price * cartItems[productName].incart));
-
+            
             delete cartItems[productName];
             localStorage.setItem('productsInCart', JSON.stringify(cartItems));
-
-            displayCart();
+//invokar displaycart och onloadcartnumber för att uppdatera kassan efter man delete en produkt.
+            
             onLoadCartNumbers(); 
+            displayCart();
         });
     }
 }
+
+
 
 
 
