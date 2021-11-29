@@ -47,21 +47,36 @@ function onLoadCartNumbers(){
 }
 
 //använder local storage skapar function för click och adderar antalet produkt som klickas, lägger till arrayen i parametern för att skriva den produkten man klickar på
-function cartNumbers(products){
+function cartNumbers(products, action){
     //hämtar från local storage med metoden getItem
 let productNumbers = localStorage.getItem('cartNumbers');
 //ändrar från string till ett nummer då i localstorage var de en string
 productNumbers = parseInt(productNumbers);
+let cartItems = localStorage.getItem('productsInCart');
+cartItems = JSON.parse(cartItems);
+
+if(action == "decrease"){
+    localStorage.setItem('cartNumbers', productNumbers - 1);
+     document.getElementById('cart-number').textContent = productNumbers -1;
+}else if ( productNumbers){
+        localStorage.setItem('cartNumbers', productNumbers + 1);
+        document.getElementById('cart-number').textContent = productNumbers +1;
+    }else {
+    localStorage.setItem('cartNumbers', productNumbers + 1);
+    document.getElementById('cart-number').textContent =  1;
+}
+
+
 //set item på local storage  
 //gör en if sats om en produkt finns redan i localstorage om de finns så adderar vi med 1
-if( productNumbers){
-    localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.getElementById('cart-number').textContent = productNumbers +1;
-}else{
-    localStorage.setItem('cartNumbers',1);
-    //hämtar nollan bredvid cart iconen som ska incrementa
-    document.getElementById('cart-number').textContent = 1;
-}
+// if( productNumbers){
+//     localStorage.setItem('cartNumbers', productNumbers + 1);
+//     document.getElementById('cart-number').textContent = productNumbers +1;
+// }else{
+//     localStorage.setItem('cartNumbers',1);
+//     //hämtar nollan bredvid cart iconen som ska incrementa
+//     document.getElementById('cart-number').textContent = 1;
+// }
   setItems(products);
 }
 //function för att sätta objekt namnen i localstorage och hur många incart
@@ -94,13 +109,16 @@ function setItems(products){
     localStorage.setItem('productsInCart',JSON.stringify (cartItems));
 }
 //skapar function för totalkostnad
-function totalCost(products){
+function totalCost(products, action){
 //console.log('the price is', products.price);
 let cartCost = localStorage.getItem('totalCost');
 
 console.log('my cartcost is', cartCost);
 console.log(typeof cartCost);
-if(cartCost != null){
+if( action == "decrease"){
+    cartCost = parseInt(cartCost);
+    localStorage.setItem('totalCost', cartCost - products.price);
+}else if(cartCost != null){
     cartCost = parseInt(cartCost);
  localStorage.setItem('totalCost', cartCost + products.price);
 }else{
@@ -141,10 +159,12 @@ function displayCart(){
           </div> <br>`
         });
         totalPrice.innerHTML = '$' + cartCost+'.00';
-          totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
+        totalPriceCheckout.innerHTML = '$' + cartCost +'.00';
     }
+   
     //invokar delete functionen där vi displayar våran displaycart function
     deleteButtons();
+    manageQuantity();
 }
 
 //skapar function för att ta bort object
@@ -180,11 +200,54 @@ function deleteButtons(){
         });
     }
 }
+//function för att använda knapparna för att öka ett värde på en produkt samt sänka.
+function manageQuantity(){
+    let decreaseButtons = document.querySelectorAll('.decrease');
+    let increaseButtons = document.querySelectorAll('.increase');
+    let currentQuantity = 0;
+    let cartItems = localStorage.getItem('productsInCart');
+    let currentProduct = "";
+    cartItems = JSON.parse(cartItems);
+    console.log(cartItems);
 
+    for(let i=0; i< decreaseButtons.length; i++ ){
+        decreaseButtons[i].addEventListener('click',()=>{
+            currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
+            console.log(currentQuantity);
+            currentProduct = decreaseButtons[i].parentElement.parentElement.childNodes[3].childNodes[3].textContent;
+            console.log(currentProduct);
 
+            
+            if(cartItems[currentProduct].incart > 1){
+            cartItems[currentProduct].incart -= 1;
+            cartNumbers(cartItems[currentProduct], "decrease");
+            totalCost(cartItems[currentProduct], "decrease");
+            localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+            displayCart();
+        }
+        });
+    }
 
+    for(let i=0; i< increaseButtons.length; i++ ){
+        increaseButtons[i].addEventListener('click',()=>{
+            currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
+            console.log(currentQuantity);
 
+            
+            currentProduct = increaseButtons[i].parentElement.parentElement.childNodes[3].childNodes[3].textContent;
+            console.log(currentProduct);
 
+            
+            
+            cartItems[currentProduct].incart += 1;
+            cartNumbers(cartItems[currentProduct]);
+            totalCost(cartItems[currentProduct]);
+            localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+            displayCart();
+        
+        })
+    }
+}
 
 onLoadCartNumbers();
 displayCart();
