@@ -1,12 +1,14 @@
+//function för animation på första sidan
 function changeClass() {
     document.getElementById("gradientCandy" ).className = "onHoover";
 
 }
+//function för avstängning av effekt
 function nothing() {
     document.getElementById("gradientCandy").className = "";
 }
 
-
+//objekt array för utskrift av produkterna
 let product = [
     {image:"/img/candies.png", name:'Bubble Gum', price:20, info: ' square flecks of real Mexican chicles in a bright pink color. Grab a handful of the chewy tidbits and start chewing to meld them into one piece of yummy gum. '},
    { image:"/img/sourfish.png", name:'Sour Fish', price:15, info: 'Extreme sour WarHeads in five intense fruit flavors of blue raspberry, watermelon, black cherry, lemon, and apple are individually wrapped for grab-and-go convenience.'},
@@ -27,14 +29,14 @@ let product = [
 </div>
 </div>`)
 });
-
-function addProductEffect(){
-  let element = document.querySelector('.btn');
-  for(let i = 0; i < element.length; i++){
-    console.log('runn')
-    element.innerHTML = 'Added to cart';
-  }
-}
+//function effekt för produkt kortets knapp
+// function addProductEffect(){
+//   let element = document.querySelector('.btn');
+//   for(let i = 0; i < element.length; i++){
+//     console.log('runn')
+//     element.innerHTML = 'Added to cart';
+//   }
+// }
 
 
 //Get the button:
@@ -59,8 +61,7 @@ function topFunction() {
 
 
 
-
-let productCart = [];
+//function för utskrift av produkt kortet
 function addProduct(){
   document.getElementById('product-cart').innerHTML +=`<div class="row">
   <div class="row main align-items-center">
@@ -76,7 +77,7 @@ function addProduct(){
 
   }
  
-
+//invokar functionerna
   function printProduct(){
     increment();
     addProduct();
